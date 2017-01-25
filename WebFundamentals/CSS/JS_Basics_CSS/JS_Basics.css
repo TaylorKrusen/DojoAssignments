@@ -1,0 +1,64 @@
+18px 0px 0px 20px for footer text
+
+*{
+ /*margin: 0px;
+ padding: 0px;*/
+ outline: 1px dotted red
+}
+#wrapper{
+ width: 960px;
+ background-color: #1d345c;
+ margin: 0px auto;
+ padding: 10px;
+}
+#header{
+ height: 55px;
+ background-color: red;
+ border-radius: 15px;
+ padding-left: 15px;
+ padding-top: 15px;
+ margin-bottom: 15px;
+}
+#sidebar{
+ height: 260px;
+ width: 210px;
+ background-color: #2e7d8b;
+ border-radius: 25px;
+ display:inline-block;
+ vertical-align:top;
+ padding-right: 10px;
+}
+#main_content{
+ height: 500px;
+ width: 695px;
+ background-color: black;
+ border-radius: 25px;
+ display:inline-block;
+ padding-left: 20px;
+ margin-left: 20px;
+ }
+ #footer{
+  height: 53px;
+  background-color: grey;
+  border-radius: 20px;
+  display:block;
+  padding-left: 20px;
+  padding-top: 5px;
+  margin-top: 15px;
+ }
+ #homelink{
+     display:inline;
+ }
+h1 {
+    color:lightgrey;
+    margin-top: 0px;
+}
+h2 {
+    color:lightgrey;
+}
+p {
+    color:lightgrey;
+}
+a {
+    color: #59c2da
+}
