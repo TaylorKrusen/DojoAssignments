@@ -1,0 +1,153 @@
+*{
+ /*margin: 0px;
+ padding: 0px;*/
+ outline: 1px dotted red;
+}
+#wrapper{
+ width: 970px;
+ background-color: #265175;
+ margin: 0px auto;
+}
+#logo {
+    text-align:left;
+    height:120px;
+    display:inline-block;
+    margin-right: 300px;
+}
+#main_content {
+    text-align:center;
+    padding-bottom:15px;
+}
+#searchdiv {
+    display:inline-block;
+    vertical-align:top;
+    text-align:right;
+}
+#searchdiv p {
+    margin-bottom:2px;
+    color:white;
+}
+#searcharea {
+    display:inline-block;
+    text-align:right;
+    background-color:#444444;
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px black;
+}
+#searchbar {
+    height:25px;
+}
+#gobutton {
+    display:inline-block;
+    background-color: #265175;
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+}
+#header {
+    height: 120px;
+}
+#navigation {
+    background: #738fa6;
+    font-size: 22px;
+    color:white;
+    width: 800px;
+    height: 30px;
+    padding-top: 8px;
+    border-radius: 10px;
+    margin-left: 96px;
+    box-shadow: 2px 2px 2px black;
+}
+#navigation li {
+    display:inline;
+    color:white;
+    padding-left: 34px;
+}
+#sidelist {
+    color:yellow;
+    display:inline-block;
+    vertical-align: top;
+    margin-right: 40px;
+    margin-left: 20px;
+}
+#sidelist li {
+    list-style-position: inside;
+    text-align:center;
+    margin: 10px 0px;
+    font-size: 18px;
+}
+#sidelist li a {
+    color:white;
+}
+#mainpara1 {
+    display:inline-block;
+    text-align:center;
+    color: white;
+}
+.para2 {
+    font-size: 25px;
+    color: yellow;
+    text-align:center;
+    margin: 10px 0px;
+}
+#para3 {
+    font-size: 25px;
+    color:white;
+    text-align:center;
+    margin: 10px 0px;
+}
+#copy {
+    display:inline-block;
+    width:600px;
+}
+#other_content {
+    margin: 0px auto;
+    background-color: white;
+    text-align:center;
+}
+#left_block {
+    display:inline-block;
+    width: 400px;
+    vertical-align:top;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+#right_block {
+    display:inline-block;
+    width: 400px;
+    vertical-align:top;
+}
+h3 {
+    border-top: 5px solid blue;
+    padding-top: 5px;
+}
+.yellowtext {
+    color:yellow;
+    text-decoration-style:underline;
+}
+.other_content_copy {
+    margin-bottom: 0px;
+}
+.other_content_lists {
+    margin-top: 0px;
+}
+#footer p {
+    color: yellow;
+    margin-top: 0px;
+    text-align:center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    padding-bottom:10px;
+}
+#footer li {
+    display:inline;
+    font-size:20px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 40px;
+}
+#footer ul {
+    text-align:center;
+    padding-top:30px;
+    margin-bottom: 0px;
+}
