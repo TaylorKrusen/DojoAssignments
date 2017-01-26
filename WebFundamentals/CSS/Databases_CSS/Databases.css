@@ -1,0 +1,119 @@
+*{
+ /*margin: 0px;
+ padding: 0px;*/
+ outline: 1px dotted red;
+ height: auto;
+}
+#wrapper {
+    width: 980px;
+    margin: 0px auto;
+    padding: 0px;
+    background: radial-gradient(dimgray 10%, darkslategray 90%);
+}
+#header {
+    background-color:grey;
+}
+#header img {
+    height: 80px;
+    width:150px;
+    vertical-align:top;
+    display:inline-block;
+    padding-left:10px;
+}
+#header h2 {
+    display:inline-block;
+    margin: 41px 0px 0px 338px;
+}
+#header ul {
+    display:block;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 11px;
+}
+#header li {
+    display:inline;
+    font-size: 14px;
+    padding: 10px 37px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+}
+#content {
+    margin: 20px;
+}
+#databaseimg {
+    height: 320px;
+    background-color:lightgrey;
+    padding: 10px;
+    display:inline-block;
+}
+#textbox {
+    display:inline-block;
+    width: 400px;
+    background-color:lightgrey;
+    vertical-align:top;
+    margin-left:20px;
+}
+#textbox h4 {
+    background-color:grey;
+    margin: 0px 0px;
+    padding: 10px 0px 10px 10px;
+}
+#textbox h5 {
+    margin: 10px 10px 25px;
+}
+#textbox p {
+    margin: 10px 10px 54px;
+}
+#littlebar {
+    display: block;
+    text-align:right;
+}
+#littlebar img {
+    height:18px;
+    width:auto;
+    display:inline-block;
+}
+#littlebar p {
+    margin: 0px;
+    font-size: 12px;
+    width:300px;
+    display:inline;
+    vertical-align:top;
+    color:blue;
+}
+.widget {
+    width:220px;
+    display:inline-block;
+    vertical-align: top;
+    background-color: lightgrey;
+    margin: 0px 10px 0px 0px;
+    height:500px;
+}
+.widget img {
+    width:220px;
+    height:100px;
+}
+.widget h4 {
+    background-color:grey;
+    margin: 0px 0px;
+    padding: 10px;
+}
+.widget p {
+    padding:10px;
+    margin-top:2px;
+    height: 285px;
+}
+.widget input {
+    background-color:blue;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-left: 105px;
+    box-shadow: rgba(0,0,0,0.5) 2px 2px 0px;
+}
+#footer {
+    padding:1px;
+}
