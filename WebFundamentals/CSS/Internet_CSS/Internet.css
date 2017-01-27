@@ -1,0 +1,188 @@
+*{
+ /*margin: 0px;
+ padding: 0px;*/
+ height: auto;
+}
+#wrapper {
+    width: 960px;
+    margin: 0px auto;
+    padding: 0px;
+}
+#header img {
+    height:100px;
+    width: auto;
+    display:inline-block;
+    margin-bottom:-35px;
+    overflow:visible;
+}
+#header h1 {
+    display:inline-block;
+    margin-bottom:10px;
+}
+#header h2 {
+    background-color: steelblue;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 15px;
+    color: white;
+    font-size: 30px;
+}
+#belowheader {
+    background: linear-gradient(to bottom, #a5a5a5 0%,#ffffff 100%)
+}
+#sidebar {
+    width:200px;
+    display:inline-block;
+}
+#main_content {
+    width:690px;
+    display:inline-block;
+    vertical-align:top;
+    margin-left: 40px;
+}
+#sidebar h3 {
+    margin-top: 0px;
+    padding-top: 20px;
+}
+#sidebar_top p {
+    font-weight:bold;
+    font-size:14px;
+}
+#sidebar_top {
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+#sidebar_bot {
+    background-image:url("file:///Users/OniHQ/Desktop/DojoAssignments/WebFundamentals/CSS/Internet_CSS/images/ad_background.png");
+    text-align:center;
+    padding-bottom: 30px;
+    box-shadow:black 2px 2px 2px;
+}
+#sidebar_bot p {
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    padding-top: 15px;
+}
+#sidebar img {
+    height:125px;
+    width:auto;
+    padding-bottom:10px;
+}
+#sidebar button {
+    display:block;
+    width:200px;
+    color:white;
+    border-radius:5px;
+    font-size:16px;
+    padding: 5px 0px;
+}
+#sidebar_bot button {
+    width:170px;
+    margin-left:15px;
+    font-size:16px;
+    border-radius:5px;
+}
+#sidebar_top h3 span {
+    color:red;
+}
+#watch {
+    background-color:steelblue;
+    margin-bottom: 5px;
+}
+#resources {
+    background-color:orange;
+}
+#learn {
+    background-color:cyan;
+}
+#subheader {
+    display:inline-block;
+}
+#smallhome {
+    margin-top:5px;
+    color:blue;
+    display:inline-block;
+    vertical-align:top;
+}
+#smallhome img {
+    height:25px;
+}
+#contact {
+    display:inline-block;
+    margin-left:393px;
+}
+#contact img {
+    height:50px;
+}
+#contact li {
+    margin: 0px 10px;
+    font-size: 12px;
+}
+#contact ul {
+    display:inline-block;
+    list-style:none;
+    padding:0px;
+    margin:0px;
+}
+#phone {
+    color:turquoise;
+    font-size:22px;
+    font-weight:500;
+}
+#body_info h2 {
+    color:steelblue;
+    margin:5px 0px;
+    border-top: 1px solid black;
+}
+#body_info img {
+    height:100px;
+    margin-left:200px;
+}
+#body_info p {
+    margin:0px;
+}
+#body_info ol li {
+    margin-bottom: 5px;
+}
+#body_info ul {
+    margin: 10px 0px;
+}
+#body_info ol {
+    margin: 10px 0px;
+}
+#big3 {
+    border-top:4px solid steelblue;
+    border-left:4px solid steelblue;
+    border-right:4px solid steelblue;
+}
+#big3 img {
+    height: 110px;
+    display:inline-block;
+    vertical-align:top;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#big3text h3 {
+    color: steelblue;
+    font-size: 20px;
+    display:inline-block;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.tealtext {
+    color:teal;
+}
+#big3text p {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+#big3text {
+    display:inline-block;
+    width:525px;
+    margin-left: 20px;
+}
+.bluetext {
+    color:steelblue;
+}
+.
