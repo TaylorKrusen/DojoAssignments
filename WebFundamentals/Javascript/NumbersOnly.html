@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Debugging JavaScript</title>
+        <script type="text/javascript">
+            "use strict";
+            var newarray = [];
+            function numbersOnly(arr) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (typeof arr[i] === "number") {
+                        newarray.push(arr[i]);
+                    }
+                }
+                console.log(newarray);
+            }
+            arr = [1, 'purple', 7, 'green', 13, 'blue', 2];
+            numbersOnly (arr);
+            //BONUS: yay!
+            function onlyNumbers(arr) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (typeof arr[i] !== "number") {
+                        arr.splice(i,1);
+                        i--;
+                    }
+                }
+                console.log(arr);
+                }
+                arr = [1, 'purple','green',8,9,13, 'blue', 2];
+                onlyNumbers (arr);
+        </script>
+    </head>
+</html>
