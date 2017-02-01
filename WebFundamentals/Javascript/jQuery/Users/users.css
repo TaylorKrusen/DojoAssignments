@@ -1,0 +1,41 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ outline: 1px dotted red;
+ font-family: monospace;
+}
+#wrapper {
+    width: 960px;
+    margin: 0px auto;
+    background-color:lightgrey;
+    padding:10px;
+}
+#dynamictable {
+    border:1px solid black;
+    display:inline-block;
+}
+#dynamictable th {
+    padding-right:20px;
+}
+form input {
+    display:inline-block;
+    margin-top: 5px;
+}
+form {
+    width:300px;
+    text-align:right;
+}
+#submission {
+    width:300px;
+    text-align:right;
+}
+#form h2 {
+    text-align:left;
+    border-bottom: 3px solid grey;
+    margin-top:30px;
+    font-size:38px;
+}
+#submit {
+    margin-top:25px;
+    margin-left:250px;
+}

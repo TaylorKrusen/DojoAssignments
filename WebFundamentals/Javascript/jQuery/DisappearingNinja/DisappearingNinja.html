@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Disappearing Ninja</title>
+        <meta name="description" content="Ninjas disappear sometimes.">
+        <link rel="stylesheet" type="text/css" href="DisappearingNinja.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        console.log($())
+        $(document).ready(function(){
+            $("img").click(function(){
+                $(this).slideUp("slow");
+            });
+            $("#restore").click(function(){
+                $("img").show("slow");
+            });
+            console.log("jQuery working");
+        });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="main_content">
+                <h2>jQuery - assignment 1</h2>
+                <div id="row1">
+                    <img class="cat" src="cat.jpeg" alt="cat.jpg">
+                    <img class="cat" src="cat.jpeg" alt="cat.jpg">
+                    <img class="cat" src="cat.jpeg" alt="cat.jpg">
+                    <img class="cat" src="cat.jpeg" alt="cat.jpg">
+                </div>
+                <div id="row2">
+                    <img class="cat" src="cat.jpeg" alt="cat.jpg">
+                    <img class="cat" src="cat.jpeg" alt="cat.jpg">
+                    <img class="cat" src="cat.jpeg" alt="cat.jpg">
+                    <img class="cat" src="cat.jpeg" alt="cat.jpg">
+                </div>
+                <button id="restore">Restore</button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Basics</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        console.log($())
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                var text = $("#btn").text();
+                $("#btn").text('You Clicked Me');
+            });
+                console.log("jQuery working");
+        });
+        </script>
+    </head>
+    <body>
+        <button id="btn">Click me</button>
+    </body>
+</html>

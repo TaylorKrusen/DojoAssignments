@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Users</title>
+        <meta name="description" content="jQuery practice. Users!">
+        <link rel="stylesheet" type="text/css" href="users.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            console.log("jQuery is working!");
+            $("#submit").click(function(){
+                var fname = $("#fname").val();
+                var lname = $("#lname").val();
+                var email = $("#email").val();
+                var phone = $("#phone").val();
+                var goInTable = "<tr><td>" + fname + "</td><td>" + lname + "</td><td>" + email + "</td><td>" + phone + "</td></tr>";
+                $("#table tbody").append(goInTable);
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="dynamictable">
+                <table id="table">
+                    <thead>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email Address</th>
+                        <th>Contact #</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div id="submission">
+                <h2>Add User</h2>
+                <form>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="first_name" placeholder="First Name"></br>
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="last_name" id="lname" placeholder="Last Name"></br>
+                    <label for="email">Email Address:</label>
+                    <input type="text" name="email" id="email" placeholder="Email Address"></br>
+                    <label for="phone">Contact No.:</label>
+                    <input type="text" name="phone" id="phone" placeholder="Phone #"></br>
+                </form>
+                <input id="submit" type="submit" value="Submit">
+            </div>
+        </div>
+    </body>
+</html>

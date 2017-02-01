@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Basics</title>
+        <link rel="stylesheet" type="text/css" href="jQueryFunctions.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        console.log($())
+        $(document).ready(function(){
+            $("#click").click(function(){
+                var text = $("#click").text();
+                $("#click").text("Ive been clicked! ... I lied about the bacon.");
+            });
+            $("#hider").click(function(){
+                $("#hideshow p").hide("fast", function(){
+                    console.log("hide button clicked");
+                });
+            });
+            $("#shower").click(function(){
+                $("#hideshow p").show("fast", function(){
+                    console.log("show button clicked");
+                });
+            });
+            $("#toggle button").click(function(){
+                $("#toggle img").toggle();
+            });
+            $("#sdown").click(function(){
+                if ( $("#slides h4").is(":hidden")){
+                    $("#slides h4").slideDown("slow");
+                } else {
+                    $("#slides h4").hide();
+                }
+            });
+            $("#sup").click(function(){
+                if ( $("#slides p").is(":hidden")){
+                    $("#slides p").show("slow");
+                } else {
+                    $("#slides p").slideUp();
+                }
+            });
+            $("#slides").click(function(){
+                $("#slides img").slideToggle("slow");
+            });
+            $("#fin").click(function(){
+                if ( $("#cat1").is(":hidden")){
+                    $("#cat1").fadeIn("slow");
+                } else {
+                    $("#cat1").hide();
+                }
+            });
+            $("#fout").click(function(){
+                if ( $("#cat2").is(":hidden")){
+                    $("#cat2").show("slow");
+                } else {
+                    $("#cat2").fadeOut();
+                }
+            });
+            $("#addclass h5").addClass("testclass");
+            $("h5").before("Before test! Taylor is great.");
+                console.log("jQuery working");
+        });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="clickbutton">
+                <button id="click">Click me for Bacon</button>
+            </div>
+            <div id="hideshow">
+                <h2>Let's play hide and <span>seek</span> show.</h2>
+                <button id="hider">Hide!</button>
+                <button id="shower">Show!</button>
+                <p> Now you see me...</p>
+            </div>
+            <div id="toggle">
+                <button>Toggle Goggles</button>
+                <img src="images/gogz.jpeg" alt=gogz.jpg>
+            </div>
+            <div id="slides">
+                <button id="sdown">Slide Down!</button>
+                <h4>Sliding Dowwwwwwwwwnnnnnnn</h4>
+                <button id="sup">Slide Up!</button>
+                <p>Sliding Uppppppppppp!</p>
+                <button id="elecric">Electric Slide</button>
+                <img src="images/slide.jpeg" alt="electric.jpg">
+            </div>
+            <div id="fades">
+                <button id="fin">Fading In.</button>
+                <button id="fout">Fading Out.</button>
+                <img id="cat1" src="images/cat1.jpeg">
+                <img id="cat2" src="images/cat2.jpeg">
+            </div>
+            <div id="addclass">
+                <p>Test paragraph about some stuff</p>
+                <h5>Test copy to apply classes to over JavaScript</h5>
+            </div>
+        </div>
+    </body>
+</html>
