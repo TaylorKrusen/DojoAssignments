@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Arena</title>
+        <meta name="description" content="Welcome to the Thunderdome.">
+        <link rel="stylesheet" type="text/css" href="DojoArena.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            console.log("jQuery is working!");
+            $("button").hover(function() {
+                var buttonPic = $(this).attr("data-alt-src");
+                $("#wrapper").css("background-image", buttonPic);
+            });
+            $("button").click(function() {
+                var buttonPic = $(this).attr("data-alt-src");
+                $("#wrapper").css("background-image", buttonPic);
+                $("#menu_box").hide();
+                $("#select_player").show();
+            });
+            $("select").change(function() {
+                var player = $(this).val();
+                // var left = $("img:selected").attr("class");
+                // alert (left);
+                // if ($(.class).attr("class"))
+                    $(".left_player").hide();
+                    $(".right_player").hide();
+                    // var turtle = $("#"+player);
+                    $("#"+player).show();
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="menu_box">
+                    <h2>Select Arena</h2>
+                <div id="buttons">
+                    <button class="button" id="beach" type="button" name="button" data-alt-src="url(https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/beach.jpg)">beach</button>
+                    <button class="button" id="planet" type="button" name="button" data-alt-src="url(https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/earth.jpg)">planet</button>
+                    <button class="button" id="dojo" type="button" name="button" data-alt-src="url(https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/dojo.jpg)">dojo</button>
+                    <button class="button" id="forest" type="button" name="button" data-alt-src="url(https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/forest.jpg)">forest</button>
+                    <button class="button" id="matrix" type="button" name="button" data-alt-src="url(https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/matrix.jpg)">matrix</button>
+                    <button class="button" id="snow" type="button" name="button" data-alt-src="url(https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/snow.jpg)">snow</button>
+                </div>
+            </div>
+            <div id="select_player">
+                <h2>Select Players</h2>
+                <select id="player1" name="player1">Favorite Language
+                    <option selected="ninja">Select Ninja</option>
+                    <option value="mikey1" pic=>Mikey</option>
+                    <option value="leo1">Leo</option>
+                    <option value="raph1">Raph</option>
+                    <option value="donnie1">Donnie</option>
+                </select>
+                <select id="player2" name="player2">Favorite Language
+                    <option selected="ninja">Select Ninja</option>
+                    <option value="mikey2">Mikey</option>
+                    <option value="leo2">Leo</option>
+                    <option value="raph2">Raph</option>
+                    <option value="donnie2">Donnie</option>
+                </select>
+            </div>
+            <img class="left_player" id="donnie1" src="https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/donny.png">
+            <img class="left_player" id="leo1" src="https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/leo.png">
+            <img class="left_player" id="mikey1" src="https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/mikey.png">
+            <img class="left_player" id="raph1" src="https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/raphael.png">
+            <img class="right_player" id="donnie2" src="https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/donny.png">
+            <img class="right_player" id="leo2" src="https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/leo.png">
+            <img class="right_player" id="mikey2" src="https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/mikey.png">
+            <img class="right_player" id="raph2" src="https://raw.githubusercontent.com/donotruck21/dojo_arena_photos/master/raphael.png">
+        </div>
+    </body>
+</html>

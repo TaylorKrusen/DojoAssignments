@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Contact Card</title>
+        <meta name="description" content="Generating Contact Cards using jQuery!">
+        <link rel="stylesheet" type="text/css" href="ContactCard.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            console.log("jQuery is working!");
+            $("#submit").click(function(){
+                var fname = $("#fname").val();
+                var lname = $("#lname").val();
+                var space = " "
+                var moreinfo = 'Click for Description';
+                var descript = $("#description").val();
+                var card = "<div class='ccard'><h2>" + fname + space + lname + "</h2><h4>" + moreinfo + "</h4><p>" + descript + "</p></div>";
+                $("#right_half").append(card);
+            });
+            $("#right_half").on('click','.ccard', function(){
+                $(this).children().toggle("slow");
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="left_half">
+                <form>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="first_name" placeholder="First Name"></br>
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="last_name" id="lname" placeholder="Last Name"></br>
+                    <label for="description">Description:</label>
+                    <textarea form="usrform" name="description" id="description" placeholder="Enter Description:"></textarea>
+                </form>
+                <input id="submit" type="submit" value="Submit">
+            </div>
+            <div id="right_half">
+            </div>
+        </div>
+    </body>
+</html>
