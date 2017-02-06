@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Open Weather</title>
+        <link rel="stylesheet" type="text/css" href="GameThrones.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('img').click(function() {
+                var house = $(this).attr('id');
+                $.get("http://www.anapioficeandfire.com/api/houses/" + house, function(res) {
+                    var info = "";
+                    info += "<h2>Name: "+res.name+"</h2>";
+                    info += "<p>Words: "+res.words+"</p>";
+                    info += "<p>Coat of Arms: "+res.coatOfArms+"</p>";
+                    info += "<p>Titles: "+res.titles+"</p>";    
+                    $("#house_info").html(info);
+                    console.log(res);
+                }, 'json');
+                return false;
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="houses">
+                <img id="362" src="img/stark.jpg" alt="stark.jpg">
+                <img id="378" src="img/targaryen.jpg" alt="targaryen.jpg">
+                <img id="229" src="img/lannister.jpg" alt="lannister.jpg">
+                <img id="16" src="img/baratheon.png" alt="baratheon.png">
+            </div>
+            <div id="house_info">
+                <h2>House Details</h2>
+            </div>
+        </div>
+    </body>
+</html>

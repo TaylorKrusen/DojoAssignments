@@ -1,0 +1,30 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ outline: 1px dotted red;
+ font-family: monospace;
+}
+#wrapper {
+    width: 960px;
+    margin: 0px auto;
+    background-color:lightgrey;
+    padding:0px;
+    border: 1px solid black;
+}
+img {
+    width:220px;
+    display:inline-block;
+    height:125px;
+    margin:5px;
+}
+#house_info {
+    border:1px solid black;
+    width:500px;
+    height:200px;
+    text-align:center;
+    padding:10px;
+}
+#house_info p {
+    margin-top:15px;
+    font-size:16px;
+}

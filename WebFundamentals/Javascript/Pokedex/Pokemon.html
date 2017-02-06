@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokemon!</title>
+        <meta name="description" content="The original 150 pokemans">
+        <link rel="stylesheet" type="text/css" href="Pokemon.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).on('click','img',function() {
+            var id = $(this).attr("id");
+            $.get("http://pokeapi.co/api/v2/pokemon/" + id + "/", function(res) {
+                var pokeInfo = "";
+                pokeInfo += "<h2>"+res.name+"</h2>";
+                pokeInfo += "<img src='http://pokeapi.co/media/img/" + id + ".png'>";
+                pokeInfo += "<h3>Types</h3>";
+                pokeInfo += "<ul>";
+                for(var i = 0; i < res.types.length; i++) {
+                    pokeInfo += "<li>" + res.types[i].type.name + "</li>";
+                }
+                pokeInfo += "</ul>";
+                pokeInfo += "<h3>Height</h3>";
+                pokeInfo += "<p>"+res.height+"</p>"
+                pokeInfo += "<h3>Weight</h3>";
+                pokeInfo += "<p>"+res.weight+"</p>"
+                $("#pokedex").html(pokeInfo);
+                console.log(res);
+            }, "json");
+        });
+        $(document).ready(function(){
+            console.log("jQuery is working!");
+            for (var i = 1; i <= 151; i++) {
+                var pokeImg = "<img id='" + i + "'src='http://pokeapi.co/media/img/" + i + ".png'>";
+                $("#pokemon").append(pokeImg);
+            }
+        });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Pokemon!</h1>
+            <div id ="pokemon">
+            </div>
+            <div id="pokedex">
+            </div>
+        </div>
+    </body>
+</html>

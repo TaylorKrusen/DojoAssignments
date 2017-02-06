@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Open Weather</title>
+        <link rel="stylesheet" type="text/css" href="weather.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('form').submit(function() {
+                var location = $("#search").val();
+                $.get("http://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=imperial&APPID=b20c8b1b40f27a9cb750266bbd4fe08e", function(res) {
+                    var weather = "";
+                    weather += "<h1>"+res.name+"</h1>";
+                    weather += "<p> Temperature: "+res.main.temp+" Fahrenheit</p>";
+                    $("#weather_info").html(weather);
+                    console.log(res);
+                }, 'json');
+                // $("#reset").each(function(){
+                //     $(this).reset();
+                // });
+                return false;
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2> Check your local weather!</h2>
+            <form id="reset">
+                <input id="search" type="search" name="search-weather">
+                <input type="submit" value="Search Weather">
+            </form>
+            <div id="weather_info">
+            </div>
+        </div>
+    </body>
+</html>
