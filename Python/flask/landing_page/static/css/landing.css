@@ -1,0 +1,16 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ outline: 1px dotted red;
+ font-family: monospace;
+}
+#wrapper {
+    width: 960px;
+    margin: 0px auto;
+    background-color:lightblue;
+    padding:0px;
+    border: 1px solid black;
+}
+h1 {
+color:yellow;
+}

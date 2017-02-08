@@ -1,0 +1,26 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ outline: 1px dotted red;
+ font-family: monospace;
+}
+#wrapper {
+    width: 960px;
+    margin: 0px auto;
+    background-color:lightgrey;
+    padding:10px;
+    border: 2px solid black;
+}
+#survey {
+margin:0px auto;
+width:300px;
+height:200px;
+border:1px solid black;
+}
+#survey p {
+display:block;
+}
+#comment {
+width:280px;
+height:60px;
+}

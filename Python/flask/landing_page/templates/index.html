@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Landing Page of Destiny</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/landing.css')}}">
+       <script type="text/javascript" src="{{ url_for ('static', filename='js/my_script.js')}}"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1> Welcome to the Landing Page!</h1>
+            <p>How much does a polar bear weigh?</p>
+            <p>Enough to break the ice. I'm {{name}}.</p>
+        </div>
+    </body>
+</html>

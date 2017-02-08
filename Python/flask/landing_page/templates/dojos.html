@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo form!</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/landing.css')}}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Enjoy this generic form that doesn't do anything!</h1>
+            <form>
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="first_name" placeholder="First Name"></br>
+                <label for="lname">Last Name:</label>
+                <input type="text" name="last_name" id="lname" placeholder="Last Name"></br>
+                <label for="description">Description:</label>
+                <textarea form="usrform" name="description" id="description" placeholder="Enter Description:"></textarea>
+                <input id="submit" type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
