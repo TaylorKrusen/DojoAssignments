@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 app = Flask(__name__)
+app.secret_key = 'dooky'
 # our index route will handle rendering our form
 @app.route('/')
 def index():
@@ -8,6 +9,19 @@ def index():
 # this route will handle our form submission
 @app.route('/result', methods=['POST'])
 def create_user():
+    errors = False
+    if len(request.form['name']) < 1:
+        errors = True
+        flash("Name can't be blank")
+    if len(request.form['comment']) < 1:
+        errors = True
+        flash("Comment can't be blank")
+    if len(request.form['comment']) > 120:
+        errors = True
+        flash("Comment shouldn't be longer than 120 characters")
+    if errors:
+        return redirect('/')
+
     name = request.form['name']
     location = request.form['location']
     language = request.form['language']

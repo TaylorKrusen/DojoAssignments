@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="number_style.css")}}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="game">
+                <h1>Welcome to the Stupendous Number Game!</h1>
+                <p>I have a secret. It's a number between 1 and 100. Guess that number and victory will be yours. Bring it on.</p>
+                <form action='/guess' method='post'>
+                    <input type="text" name="guess">
+                    <button>Submit</button>
+                </form>
+                <form action='/clear' method='post'>
+                    <button>Reset Number</button>
+                </form>
+                <!-- here is an example of embedding an if statement in our code -->
+                {% if session['user'] == "win" %}
+                <p>{{session['phrase']}}</p>
+                {% endif %}
+                {% if session['user'] == "higher" %}
+                <p>{{session['phrase']}}</p>
+                {% endif %}
+                {% if session['user'] == "lower" %}
+                <p>{{session['phrase']}}</p>
+                {% endif %}
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </body>
+</html>
