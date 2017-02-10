@@ -1,0 +1,25 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ outline: 1px dotted red;
+ font-family: monospace;
+}
+#wrapper {
+    width: 960px;
+    margin: 0px auto;
+    background-color:lightblue;
+    padding:0px;
+    border: 1px solid black;
+}
+#gold_counter{
+display:inline;
+}
+.makegold {
+margin-top:20px;
+display:inline-block;
+}
+#gold_log p {
+width:800px;
+height:100px;
+border:1px solid black;
+}

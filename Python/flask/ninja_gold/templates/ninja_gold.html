@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Gold</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="ninja_style.css")}}">
+        <!-- <link rel="stylesheet" type="text/css" href="../static/ninja_style.css"> -->
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="gold_counter">
+                <h5>Your Gold:</h5>
+                <p>GOLD</p>
+            </div>
+            <div id="gold_buildings">
+                <div class="makegold">
+                    <h2>Farm</h2>
+                    <p>(earns 10-20 gold)</p>
+                    <form action='/process_money' method="post">
+                        <input type="hidden" name="building" value="farm">
+                        <button>Harvest!</button>
+                </div>
+                <div class="makegold">
+                    <h2>Cave</h2>
+                    <p>(earns 5-10 gold)</p>
+                    <form action='/process_money' method="post">
+                        <button>Spelunk!</button>
+                </div>
+                <div class="makegold">
+                    <h2>House</h2>
+                    <p>(earns 2-5 gold)</p>
+                    <form action='/process_money' method="post">
+                        <button>Rummage!</button>
+                </div>
+                <div class="makegold">
+                    <h2>Casino</h2>
+                    <p>(earns/takes 0-50 gold)</p>
+                    <form action='/process_money' method="post">
+                        <button>Gamble!</button>
+                </div>
+            </div>
+            <div id="gold_log">
+                <h5>Activities</h5>
+                <p>ACTIVITIES PLACEHOLDER</p>
+            </div>
+        </div>
+    </body>
+</html>
