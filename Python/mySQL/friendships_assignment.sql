@@ -1,0 +1,1 @@
+INSERT INTO friendships_assignment (first_name, last_name, 
