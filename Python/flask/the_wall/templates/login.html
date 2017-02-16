@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to the Wall.</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="css/wall.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="css/bootstrap.css")}}">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/wall.css"> -->
+  </head>
+  <body>
+    <!-- <div class="wrapper">
+      <div id="login_form">
+        <div class="container">
+          <form id="log_form" action="/login" class="form-horizontal" role="form" method='post'>
+            <h2>Login to the Wall! </h2>
+            <div class="form-group">
+              {% with errors = get_flashed_messages(category_filter=["logEmailError"]) %}
+                {% include "oops.html" %}
+              {% endwith %}
+              <label for="email" class="col-sm-3 control-label">Email</label>
+              <div class="col-sm-9">
+                <input name="email" type="email" id="email" placeholder="Email" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              {% with errors = get_flashed_messages(category_filter=["loginError"]) %}
+                {% include "oops.html" %}
+              {% endwith %}
+              <label for="password" class="col-sm-3 control-label">Password</label>
+              <div class="col-sm-9">
+                <input name="password" type="password" id="password" placeholder="Password" class="form-control">
+              </div>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3">
+              {% with errors = get_flashed_messages(category_filter=["loginError"]) %}
+                {% include "oops.html" %}
+              {% endwith %}
+              <button type="submit" class="btn btn-primary btn-block">Log me in!</button>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3">
+              <button type="button" class="btn btn-link"><a href="/the_reg">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> -->
+    <div class = "container">
+      <div class="wrapper">
+        <form action="/login" method="post" name="Login_Form" class="form-signin">
+          <h2 class="form-signin-heading">Welcome to <mark><strong>The Wall.</strong></mark></br><small>Please Sign In</small></h2>
+          <hr class="colorgraph"><br>
+          {% with errors = get_flashed_messages(category_filter=["logEmailError"]) %}
+            {% include "oops.html" %}
+          {% endwith %}
+          <input type="text" class="form-control" name="email" placeholder="Email" required="" autofocus="" />
+          {% with errors = get_flashed_messages(category_filter=["pwError"]) %}
+            {% include "oops.html" %}
+          {% endwith %}
+          <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+          {% with errors = get_flashed_messages(category_filter=["loginError"]) %}
+            {% include "oops.html" %}
+          {% endwith %}
+          <button class="btn btn-lg btn-primary btn-block"  name="submit" value="Login" type="Submit">Login</button>
+          <a href="/the_reg" id="reg_btn" class="btn btn-info btn-sm col-md-4 col-md-offset-4" role="button">Register</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

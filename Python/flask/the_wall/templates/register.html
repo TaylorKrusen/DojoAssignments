@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to the Wall.</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="css/surveystyle.css")}}"> -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/wall.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="login_form">
+        <div class="container">
+          <form id="reg_form" action="/create_user" class="form-horizontal" role="form" method='post'>
+            <h2>Register for the Wall! </h2>
+            <div class="form-group">
+              {% with errors = get_flashed_messages(category_filter=["fname_Error"]) %}
+                  {% include "oops.html" %}
+              {% endwith %}
+              <label for="firstName" class="col-sm-3 control-label">First Name</label>
+              <div class="col-sm-9">
+                  <input name="fname" type="text" id="firstName" placeholder="First Name" class="form-control" autofocus>
+                  <span class="help-block">Nick names encouraged.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              {% with errors = get_flashed_messages(category_filter=["lname_Error"]) %}
+                {% include "oops.html" %}
+              {% endwith %}
+              <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+              <div class="col-sm-9">
+                  <input name="lname" type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus>
+                  <span class="help-block">If you can read this, send cookies.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              {% with errors = get_flashed_messages(category_filter=["emailError"]) %}
+                {% include "oops.html" %}
+              {% endwith %}
+              <label for="email" class="col-sm-3 control-label">Email</label>
+              <div class="col-sm-9">
+                <input name="email" type="email" id="email" placeholder="Email" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              {% with errors = get_flashed_messages(category_filter=["pwordError"]) %}
+                {% include "oops.html" %}
+              {% endwith %}
+              <label for="password" class="col-sm-3 control-label">Password</label>
+              <div class="col-sm-9">
+                <input name="password" type="password" id="password" placeholder="Password" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              {% with errors = get_flashed_messages(category_filter=["confirm_passwordError"]) %}
+                {% include "oops.html" %}
+              {% endwith %}
+              <label for="passConf" class="col-sm-3 control-label">Confirm Password</label>
+              <div class="col-sm-9">
+                  <input name="passConfirm" type="password" id="passConf" placeholder="Please Confirm Password" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-9 col-sm-offset-3">
+                  <button type="submit" class="btn btn-primary btn-block">Register</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

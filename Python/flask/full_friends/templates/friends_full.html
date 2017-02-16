@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Full Friends Assignment</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="css/surveystyle.css")}}"> -->
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="addFriend">
+        <h2>Register to be a Friend</h2>
+        <form action='/friends' method="post">
+          <!-- {% block form %} -->
+          {% with errors = get_flashed_messages(category_filter=["fname_Error"]) %}
+              {% include "oops.html" %}
+          {% endwith %}
+          <p><label for="firstname">First Name:</label>
+          <input type="text" id="first_name" name="first_name"></p>
+          {% with errors = get_flashed_messages(category_filter=["lname_Error"]) %}
+              {% include "oops.html" %}
+          {% endwith %}
+          <p><label for="lastname">Last Name:</label>
+          <input type="text" id="last_name" name="last_name"></p>
+          {% with errors = get_flashed_messages(category_filter=["emailError"]) %}
+              {% include "oops.html" %}
+          {% endwith %}
+          <p><label for="email">Email:</label>
+          <!-- {% endblock %} -->
+          <input type="text" id="email" name="email"></p>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      {{session['friendList']}}
+      {% if list %}
+      <div id="friendList">
+        <h3>Current friend list</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            {% for person in list %}
+            <tr>
+              <td>{{person['first_name']}}</td>
+              <td>{{person['last_name']}}</td>
+              <td>{{person['id']}}</td>
+              <td> possible delete?
+                <!-- <a href="/friends/{{person['id']}}/edit"><input type='submit' name='edit' value='Edit'></a> -->
+              </td>
+              <td>delete?
+                  <!-- <form action="/friends/{{person['id']}}/delete" method="POST">
+                    <input type='submit' name='delete' value='Delete'>
+                  </form> -->
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+         </div>
+     {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

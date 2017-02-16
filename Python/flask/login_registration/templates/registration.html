@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login and Registration</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="css/surveystyle.css")}}"> -->
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="registration">
+        <h2>Register... for reasons</h2>
+        <form action='/register' method="post">
+          {% with errors = get_flashed_messages(category_filter=["fname_Error"]) %}
+              {% include "oops.html" %}
+          {% endwith %}
+          <p><label for="firstname">First Name:</label>
+          <input type="text" id="first_name" name="first_name"></p>
+          {% with errors = get_flashed_messages(category_filter=["lname_Error"]) %}
+              {% include "oops.html" %}
+          {% endwith %}
+          <p><label for="lastname">Last Name:</label>
+          <input type="text" id="last_name" name="last_name"></p>
+          {% with errors = get_flashed_messages(category_filter=["emailError"]) %}
+              {% include "oops.html" %}
+          {% endwith %}
+          <p><label for="email">Email:</label>
+          <input type="text" id="email" name="email"></p>
+          {% with errors = get_flashed_messages(category_filter=["pwordError"]) %}
+              {% include "oops.html" %}
+          {% endwith %}
+          <p><label for="pword">Password:</label>
+          <input type="text" id="pword" name="password"></p>
+          {% with errors = get_flashed_messages(category_filter=["pword_confError"]) %}
+              {% include "oops.html" %}
+          {% endwith %}
+          <p><label for="pconfirm">Confirm Password:</label>
+          <input type="text" id="pconfirm" name="pass_confirm"></p>
+          <input type="submit" value="Submit">
+          {% with errors = get_flashed_messages(category_filter=["noUser"]) %}
+              {% include "oops.html" %}
+          {% endwith %}
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

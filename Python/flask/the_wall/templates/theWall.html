@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Great Wall</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="css/wall.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="css/bootstrap.css")}}">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/wall.css"> -->
+  </head>
+  <body>
+    <div class="container-fluid" id="wallbox">
+    <!-- This is the Nav bar... -->
+      <div class="container-fluid nav-group">
+        <ul class="nav navbar-nav navbar-left">
+          <li><h3>Welcome to <mark>The Wall.</mark></h3></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/logout" role="button" class="btn btn-sm navbar-btn navbar-right">Logout</a></li>
+        </ul>
+      </div>
+      <hr class="colorgraph"><br>
+      <!-- This is the message input -->
+      <div id="message_input" class="container-fluid">
+        <form action='/post_message' method='post'>
+          <h3 class="inline-block">Post a Message</h3>
+          <p class="inline-block">What's up, {{session["first_name"]}}?</p>
+          <!-- <div class="row container-fluid inline">
+          </div> -->
+          <textarea name="message" class="form-control" rows="3"></textarea>
+          <button id="submit_btn" type="submit" class="btn btn-primary col-md-3 col-md-offset-9"><span class="glyphicon glyphicon-send"></span> Post Message</button>
+        </form>
+      </div>
+      <!-- This is where the wall content goes -->
+      <div id="message_wall" class="container-fluid">
+        <div id="msgBody">
+          {% for msg in session['posts'] %}
+            <div class="container-fluid" id="MsgHolder">
+              <h4>{{msg['first_name']}}&nbsp{{msg['last_name']}}&nbsp<small>{{msg['created_at'].strftime("%B %d, %Y %-I:%M %p")}}</small></h4>
+              <p class='msg_body'>{{msg['message']}}</p>
+            </div>
+            <div id="add-comment" class="container-fluid">
+                {% for comm in session['comments'] %}
+                  {% if msg["msgID"] == comm["messages_id"]: %}
+                    <h5 class='comment_text'>{{comm['first_name']}}&nbsp{{comm['last_name']}} on {{comm['created_at'].strftime("%B %d, %Y %-I:%M %p")}}</h5>
+                    <p class='comment_text'>{{comm['comment']}}</p>
+                  {% endif %}
+                {% endfor %}
+                <div class="container-fluid">
+                  <form action="/leave_comment/{{ msg["msgID"] }}" method="post" class="form-horizontal" id="commentForm" role="form">
+                    <label for="email" class="col-sm-2 control-label">Comment</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" name="addComment" id="addComment" rows="2"></textarea>
+                    </div>
+                    <button class="col-sm-3 col-sm-offset-9 btn btn-success btn-circle" type="submit" id="submitComment"><span class="glyphicon glyphicon-tree-deciduous"></span> Submit Comment</button>
+                  </form>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
