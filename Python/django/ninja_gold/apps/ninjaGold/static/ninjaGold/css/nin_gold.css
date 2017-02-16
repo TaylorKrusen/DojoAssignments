@@ -1,0 +1,32 @@
+#wrapper {
+width:900px;
+margin:0px auto;
+background-color:lightyellow;
+}
+.green {
+color:green;
+}
+.red {
+color:red;
+}
+.makegold {
+width:150px;
+display:inline-block;
+border:1px solid black;
+margin:10px;
+text-align:center;
+}
+#gold_counter h5{
+display:inline-block;
+}
+#gold_counter p {
+border:1px solid black;
+display:inline-block;
+padding:5px;
+}
+#gold_log  {
+width: 649px;
+border:1px solid black;
+padding:15px;
+margin-left:10px;
+}
