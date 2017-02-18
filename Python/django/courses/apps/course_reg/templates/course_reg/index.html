@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Course Registration</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="add_course">
+        <h1>Add a new course</h1>
+        <form action="{% url 'home:add_class' %}" method="post">
+          {% csrf_token %}
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="course_name">
+          <label for="descript">Description:</label>
+          <input type="textarea" id="descript" name="course_descript">
+          <input type="submit" name= "" value="Add Course"></input>
+        </form>
+      </div>
+      <div id="course_list">
+        <h2>All courses</h2>
+        <table>
+          <tr>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+          </tr>
+            {% for courses in course_info %}
+          <tr>
+            <td>{{ courses.name }}</td>
+            <td>{{ courses.description }}</td>
+            <td>{{ courses.created_at }}</td>
+            <td><a href="{% url 'home:remove_course' id=courses.id%}">Remove</a>
+            </td>
+          </tr>
+            {% endfor %}
+          </table>
+      </div>
+    </div>
+  </body>
+</html>
