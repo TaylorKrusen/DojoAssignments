@@ -1,0 +1,16 @@
+
+#wrapper {
+	width: 900px;
+	margin: 0px auto;
+	/*overflow: scroll;*/
+	color: black;
+}
+#email {
+    margin-top: 30px;
+		width:600px;
+}
+
+#submitbutton {
+    margin-top: 10px;
+    margin-left:530px;
+}

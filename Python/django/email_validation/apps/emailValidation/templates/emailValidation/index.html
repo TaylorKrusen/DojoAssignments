@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'emailValidation/css/styles.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <title>Email Validation</title>
+    </head>
+    <body>
+      <div id="wrapper">
+        <h3>Enter your email</h3>
+        {% if messages %}
+        <ul id="theErrors" class="list=group">
+          {% for msg in messages %}
+          <li class="list-group-item list-group-item-danger">{{ msg }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/process" method="POST" id="email">
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">Email:</span>
+            <input type="text" name="email" class="form-control" aria-describedby="sizing-addon1">
+          </div>
+          <div id="submitbutton">
+            {% csrf_token %}
+            <input class="btn btn-default" type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </body>
+</html>
