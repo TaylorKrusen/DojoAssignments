@@ -11,7 +11,7 @@ def addCourse(request):
     if request.method == 'POST':
         Courses.objects.create(name = request.POST['course_name'], description = request.POST['course_descript'])
 
-    return redirect('/')
+    return redirect('courses:index')
 
 def removeCourse(request, id):
     context = {
@@ -22,4 +22,4 @@ def removeCourse(request, id):
 def confirmRemove(request, id):
     deleteMe = Courses.objects.get(id=id)
     deleteMe.delete()
-    return redirect('/')
+    return redirect('courses:index')

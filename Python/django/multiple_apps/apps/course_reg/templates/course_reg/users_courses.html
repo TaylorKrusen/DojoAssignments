@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Random Word Gen</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Hello, {{request.session.user_fname}}. You rascal.</h1>
+      <h2>Subscribe to courses below:</h2>
+      {% for course in courses %}
+        <h2>{{course.courses_name}}</h2>
+      {% endfor %}
+      <form action='{% url 'courses:userAddCourse' %}' method='post'>
+      {% csrf_token %}
+        <select id="user_picker" name='user'>
+          {% for user in users %}
+            <option value='{{user.id}}'>{{user.first_name}} {{user.last_name}}</option>
+          {% endfor %}
+        </select>
+        <select id="course_picker" name='course'>
+          {% for course in courses %}
+            <option value='{{course.id}}'>{{course.name}}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Add User to Courses!">
+      </form>
+    </div>
+  </div>
+    <table class="table">
+      <tr>
+        <th>Course Name</th>
+        <th>Number of Students Signed Up</th>
+      </tr>
+      {% for course in courses %}
+        <tr>
+          <td>{{ course.name }}</td>
+          <td>{{ course.users.count }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

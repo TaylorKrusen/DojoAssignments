@@ -16,5 +16,5 @@ Including another URLconf
 from django.conf.urls import url, include
 
 urlpatterns = [
-    url(r'^', include('apps.course_reg.urls', namespace='home'))
+    url(r'^', include('apps.course_reg.urls', namespace='courses'))
 ]

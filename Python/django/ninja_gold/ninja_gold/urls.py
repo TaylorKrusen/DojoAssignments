@@ -16,5 +16,5 @@ Including another URLconf
 from django.conf.urls import url, include
 
 urlpatterns = [
-    url(r'^', include('apps.ninjaGold.urls')),
+    url(r'^', include('apps.ninjaGold.urls', namespace="gold")),
 ]
