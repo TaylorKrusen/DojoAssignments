@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit a Product</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Edit Product #{{products.id}}</h1>
+      <form action="{% url 'restful:update' id=products.id %}" method="POST" id="edit_product_form">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" placeholder="{{products.name}}" name="name" id="name"><br>
+        <label for="descript">Description:</label>
+        <input type="text" name="description" placeholder="{{products.description}}" id="descript"><br>
+        <label for="price">Price:</label>
+        <input type="number" name="price" placeholder="{{products.price}}" id="price"><br>
+        <input class="btn btn-default" type="submit" value="Submit">
+      </form>
+      <a href="{% url 'restful:products' %}">go back</a>
+    </div>
+  </body>
+</html>

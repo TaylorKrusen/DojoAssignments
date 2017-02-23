@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Product #{{products.id}}</h1>
+      <h3>Name:  {{products.name}}</h3>
+      <h3>Description:   {{products.description}}</h3>
+      <h3>Price:   {{products.price}}</h3>
+      <p><a href="{% url 'restful:products' %}">Back</a>  |  <a href="{% url 'restful:edit' id=products.id %}">Edit</a></p>
+    </div>
+  </body>
+</html>
