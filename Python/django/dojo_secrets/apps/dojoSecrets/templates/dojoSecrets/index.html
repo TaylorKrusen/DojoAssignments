@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Registrtion</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Welcome {{ request.session.user_fname }}</h1>
+      {% if messages %}
+      <ul id="theErrors" class="list-group">
+        {% for msg in messages %}
+        <li class="list-group-item list-group-item-success">{{ msg }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <div id="secret_text_box">
+        <form action="{% url 'secrets:post' %}" method='post'>
+        {% csrf_token %}
+          <textarea name="secret" class='form-control' rows='3'></textarea>
+          <button type="submit" class="btn btn-default">Post Secret</button>
+        </form>
+      </div>
+      <div id="secret_wall">
+        <h2>Recent Secrets</h2>
+        {% load humanize %} <!-- Allows use of "natural time" -->
+        {% for secret in secrets %}
+          <ul>
+            <li>
+              "{{secret.message}}"
+              ({{ secret.created_at|naturaltime }})
+              {{ secret.liked_by.count }} likes
+              <a href="{% url 'secrets:like' id=secret.id %}">Like</a>
+              {% if request.session.user_id == secret.user_id %} <!-- Conditional identifies which secrets were posted by the logged in user -->
+                <span><b>You posted this</b></span>
+                <form class='inline' action="{% url 'secrets:remove'   id=secret.id %}" method='post'>
+                  {% csrf_token %}
+                  <input type="submit" value="delete">
+                </form>
+              {% endif %}
+            </li>
+          </ul>
+        {% endfor %}
+      </div>
+      <form action="{% url 'users:logout' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="logout">
+      </form>
+    </div>
+  </body>
+</html>

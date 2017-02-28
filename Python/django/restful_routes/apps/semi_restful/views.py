@@ -14,9 +14,9 @@ def products(request):
 def new(request):
     return render(request, 'semi_restful/new.html')
 
-def show(request, id):
+def show(request, show_id):
     context = {
-        "products": Product.objects.get(id=id)
+        "products": Product.objects.get(id=show_id)
     }
     return render(request, 'semi_restful/show.html', context)
 
@@ -31,14 +31,14 @@ def create(request):
         Product.objects.add_product(request.POST)
         return redirect('restful:products')
 
-def update(request, id):
+def update(request, update_id):
     if request.method == 'POST':
-        Product.objects.update_product(request.POST, id)
+        Product.objects.update_product(request.POST, update_id)
         return redirect('restful:products')
 
-def remove(request, id):
+def remove(request, remove_id):
     if request.method == 'POST':
-        Product.objects.remove_product(id)
+        Product.objects.remove_product(remove_id)
         return redirect('restful:products')
 # def addCourse(request):
 #     if request.method == 'POST':

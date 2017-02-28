@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Registrtion</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h3>Registration</h3>
+      {% if messages %}
+      <ul id="theErrors" class="list-group">
+        {% for msg in messages %}
+        <li class="list-group-item list-group-item-danger">{{ msg }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <form action="{% url 'users:register' %}" method="POST" id="register_box">
+        <label for="fname">First Name:</label>
+        <input type="text" name="first_name" id="fname"><br>
+        <label for="lname">Last Name:</label>
+        <input type="text" name="last_name" id="lname"><br>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email"><br>
+        <label for="pword">Password:</label>
+        <input type="password" name="password" id="pword"><br>
+        <label for="confirm">Confirm Password:</label>
+        <input type="password" name="confirm" id="confirm"><br>
+        <div id="submitbutton">
+          {% csrf_token %}
+          <input class="btn btn-default" type="submit" value="Submit">
+        </div>
+      </form>
+      <h3>Login</h3>
+      <form action="{% url 'users:login' %}" method="POST" id="login_box">
+        <label for="email_two">Email:</label>
+        <input type="text" name="email" id="email_two"><br>
+        <label for="pword_two">Password:</label>
+        <input type="password" name="password" id="pword_two"><br>
+        <div id="submitbutton">
+          {% csrf_token %}
+          <input class="btn btn-default" type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

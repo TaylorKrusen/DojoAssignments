@@ -20,7 +20,7 @@
             <td>{{ product.name }}</td>
             <td>{{ product.description }}</td>
             <td>${{ product.price }}</td>
-            <td><a href="{% url 'restful:show' id=product.id %}">Show</a> | <a href="{% url 'restful:edit' id=product.id %}">Edit</a> | <form action="{% url 'restful:remove' id=product.id %}" method="post">
+            <td><a href="{% url 'restful:show' show_id=product.id %}">Show</a> | <a href="{% url 'restful:edit' id=product.id %}">Edit</a> | <form action="{% url 'restful:remove' remove_id=product.id %}" method="post">
             {% csrf_token %}
             <input type="submit" name="" value="Remove">
             </form></td>
