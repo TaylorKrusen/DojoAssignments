@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Login</title>
+	</head>
+	<body>
+		<ul class = 'messages'>
+			{% if messages %}
+				{% for message in messages %}
+					 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+				{% endfor %}
+			{% endif %}
+			{% if RegForm.non_field_errors %}
+				{% for error in RegForm.non_field_errors %}
+					<li>{{error}}</li>
+				{% endfor %}
+			{% endif %}
+		</ul>
+		<fieldset>
+			<legend>Register:</legend>
+			<form action="/register" method="POST">
+				{% csrf_token %}
+				{{regForm.as_p}}
+				<input type="submit" value="Register">
+			</form>
+		</fieldset>
+		<hr>
+		<fieldset>
+			<legend>Login:</legend>
+			<form action="/login" method="POST">
+				{% csrf_token %}
+				{{logForm.as_p}}
+				<input type="submit" value="Login">
+			</form>
+		</fieldset>
+	</body>
+</html>
