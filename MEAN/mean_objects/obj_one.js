@@ -12,8 +12,8 @@ function VehicleConstructor(name,wheels,passengers, speed) {
   this.speed = speed;
   this.move = function() {
   // we can call our private function since we are still in the function scope.
-  updateDistanceTraveled();
-  this.makeNoise();
+    updateDistanceTraveled();
+    this.makeNoise();
   }
   this.checkMiles = function() {
     console.log(distance_travelled);

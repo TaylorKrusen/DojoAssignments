@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <style>
+            #the_button {
+                color: teal;
+                font-weight: 600;
+                height:25px;
+                margin: 0px auto;
+            }
+            .blue {
+                background-color:blue;
+            }
+            .red {
+                background-color:red;
+            }
+            .green {
+                background-color:green;
+            }
+        </style>
+        <script>
+        </script>
+    </head>
+    <body>
+        <!-- Make this button:
+        1. on click toggle between blue and red
+        2. on hover should toggle the button green
+        optional:
+        1. press button and another button with same functions appears
+        2. use JS and no libraries -->
+        <div id='wrapper'>
+            <button id='the_button' class='blue' >I'm a real button</button>
+        </div>
+        <script>
+            $(document).on('click', '#the_button', function(){
+        	    $(this).toggleClass("red");
+            });
+
+            $("#the_button").hover(function(){
+            	$(this).addClass("green")
+            }, function(){ $(this).removeClass("green") });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Valid Tester</title>
+    </head>
+    <body>
+        <h1>I see you're using includes.</h1>
+        <%- include('partials/error') %>
+        <form action='/users' method='post'>
+            First Name:<input name='first_name' type='text'>
+            Last Name:<input name='last_name' type='text'>
+            Age:<input name='age' type='number'>
+            Email:<input name='email' type='text'>
+            <input type='submit' value='Bacon'>
+        </form>
+    </body>
+</html>

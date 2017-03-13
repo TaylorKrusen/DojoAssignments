@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Share Wisom Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="wrapper" class='container'>
+      <h1> Ready to share your wisdom?!</h1>
+      <form action="/wisdom" method="POST" id="wisdom_form">
+        <label for="the_name">Name:</label>
+        <input type="text" name="name" id="the_name"><br>
+        <label for="the_wisdom">Wisdom:</label>
+        <input type="textarea" name="wisdom_text" id="the_wisdom"><br>
+        <label for="the_bees">How many bees are too many?:</label>
+        <input type="number" name="bees" id="the_bees"><br>
+        <input class="btn btn-default" type="submit" value="Submit">
+      </form>
+      <a href="/">go back</a>
+    </div>
+  </body>
+</html>

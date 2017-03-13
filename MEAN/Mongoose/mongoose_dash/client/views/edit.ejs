@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit</title>
+</head>
+<body>
+  <h1>Edit <%= wisdom.name %>'s Wisdom!</h1>
+  <form action="/update/<%= wisdom.id %>" method='post'>
+    <h4>Original Wisdom Poster: <%= wisdom.name %></h4>
+    Update Name: <input type="text" name="name" value="">
+    <p>Original Wisdom Text: <%= wisdom.wisdom_text %></p>
+    Update Wisdom: <input type="text" name="wisdom_text" value="">
+    <p>The person that posted that wisdom thinks you should be scared of this number of bees: <%= wisdom.bees %></p>
+    Update Bees?! <input type="number" name="bees" value="">
+    <input type="submit" value="Edit and update your wisdom">
+  </form>
+  <a href="/">Home</a>
+</body>
+</html>

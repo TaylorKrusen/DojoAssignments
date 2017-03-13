@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wisdoms</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    </head>
+    <body>
+      <div id="wrapper" class='container'>
+        <h1>List of Big Wisdoms</h1>
+        <div id="wisdom_list" class='container'>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Wisdom</th>
+              <th>Number of Bees??</th>
+              <th>Action</th>
+            </tr>
+            <% for (var i = 0; i<wisdom_info.length; i++){ %>
+                <tr>
+                  <td><%= wisdom_info[i].name %></td>
+                  <td><%= wisdom_info[i].wisdom_text %></td>
+                  <td><%= wisdom_info[i].bees %></td>
+                  <td>
+                      <a href="/show/<%= wisdom_info[i]._id %>/">Show</a> |
+                      <a href="/edit/<%= wisdom_info[i]._id %>/">Edit</a> |
+                      <form action="/destroy/<%= wisdom_info[i]._id %>/" method="post">
+                        <input type="submit" name="" value="Remove">
+                      </form>
+                  </td>
+                </tr>
+             <%}%>
+          </table>
+          <a href="/wisdom/new">Share a Wisdom</a>
+        </div>
+      </div>
+    </body>
+</html>
