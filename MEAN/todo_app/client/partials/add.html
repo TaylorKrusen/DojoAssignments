@@ -1,0 +1,33 @@
+<div class="container" ng-controller='tasksController'>
+    <div class="row">
+        <form class="form-horizontal" ng-submit='add_task()'>
+            <fieldset>
+                <legend>Add a To Do!</legend>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="the_task">Task</label>
+                    <div class="col-md-4">
+                        <input id="the_task" type="text" placeholder="What is your To Do?" class="form-control input-md" ng-model='todo.task'>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="description">Description</label>
+                    <div class="col-md-4">
+                        <textarea id="description" type="textarea" rows="2" placeholder="Please add details about the task" class="form-control input-md" ng-model='todo.info'></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="the_date">Target Date</label>
+                    <div class="col-md-4">
+                        <input id="the_date" type="date" class="form-control input-md" ng-model='todo.date'>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="add_button"></label>
+                    <div class="col-md-8">
+                        <button id="add_button" class="btn btn-primary">Add Task</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

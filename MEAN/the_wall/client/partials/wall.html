@@ -1,0 +1,44 @@
+<div class='container'>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-brand navbar-brand-left">Welcome to the wall, {{activeUser.name}}...</div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href='#'>Add New Task</a></li>
+                    <li><a href='/logout'>logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='container' id='message_box' ng-controller='postsController'>
+        <h4>You're at the Wall</h4>
+        <p>Make a Post:</p>
+        <div ng-messages="postForm.the_post.$error">
+            <p ng-message="required" class="bg-info">Share your wisdom, {{activeUser.name}}</p>
+        </div>
+        <div class='container'>
+            <form name='postForm' ng-submit="add_post()">
+                <textarea name="the_post" class='form-control' rows='3' ng-model='newPost.text' required ></textarea></br>
+                <button type="submit" class="btn btn-primary">Post</button>
+            </form>
+        </div>
+        <div id="wall_dash" class="container-fluid">
+            <div class="container" id="postHolder" ng-repeat="post in posts">
+                <h4><small>{{post.name}}</small></h4>
+                <p class='post_body'>{{post.text}}</p>
+                <div id="add-comment" class="container-fluid">
+                    <h5 class='comment_text'>comment name</h5>
+                    <p class='comment_text'>comment text</p>
+                    <div class="container-fluid">
+                        <form ng-submit="add_comment()" class="form-horizontal" id="commentForm" role="form">
+                            <label for="the_comment" class="col-sm-2 control-label">Comment</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="the_comment" id="addComment" rows="2" ng-model='newComment.comment'></textarea>
+                            </div>
+                            <button class="col-sm-3 col-sm-offset-9 btn btn-success btn-circle" type="submit" id="submitComment"><span class="glyphicon glyphicon-tree-deciduous"></span> Submit Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

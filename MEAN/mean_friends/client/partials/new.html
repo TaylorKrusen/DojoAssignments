@@ -1,0 +1,30 @@
+<div id='newFriendForm' class="section">
+    <div class="row center-align">
+        <h2>New Homie</h2>
+    </div>
+    <form ng-submit="create()" class="form-horizontal">
+        <div class="form-group">
+            <label for="firstName" class="control-label col-xs-2">First Name</label>
+            <div class="col-xs-5">
+                <input ng-model="newForm.firstName" type="text" class="form-control" id="firstName" placeholder="First Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="control-label col-xs-2">Last Name</label>
+            <div class="col-xs-5">
+                <input ng-model="newForm.lastName" type="text" class="form-control" id="lastName" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bday" class="control-label col-xs-2">Birthday</label>
+            <div class="col-xs-5">
+                <input ng-model="newForm.birthday" type="date" class="form-control" id="bday">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button type="submit" class="btn btn-primary">Add Homie</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -30,7 +30,7 @@
                 <% } %>
             <% } else { %>
                 <div class='container' id='message_wall'>
-                    <% for (var x = 0; x<messages.length; x++) { %>
+                    <% for (var x in messages) { %>
                         <div id='msgBox'>
                             <h4>Name: <%= messages[x].name %></h4>
                             <h6>Message: <%= messages[x].message %></h6>

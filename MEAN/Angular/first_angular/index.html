@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+    <head>
+        <meta charset="utf-8">
+        <title>First Angular Page</title>
+        <script src='node_modules/angular/angular.js'></script>
+        <script src="includeMe.js"> </script>
+    </head>
+    <body>
+        <div id='div_to_pass_controller' ng-controller = 'divController'>
+            <h1>sup, world?</h1>
+            <h6>referencing variables that we passed from our controller...</h6>
+            <p>My name is {{myName}} and my favorite languages are {{myFavoriteLanguage}} and we are learning to use the {{myFavoriteJSLibrary}} library.
+            <h6> or using the ng-bind method below</h6>
+            <p>My name is <span ng-bind='myName'></span> and I know these languages:<span ng-bind='myFavoriteLanguage'></span>. We are learning the <span ng-bind='myFavoriteJSLibrary'></span> library.</p>
+        </div>
+    </body>
+</html>

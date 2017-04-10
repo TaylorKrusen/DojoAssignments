@@ -1,0 +1,23 @@
+<div class="section">
+    <div class="row center-align">
+        <h1>The Homies!</h1>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th colspan="3">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="friend in friends">
+               <td>{{friend.firstName}} {{friend.lastName}}</td>
+               <td>{{friend.birthday}}</td>
+               <td><a ng-href="/#!/show/{{friend._id}}">Show</a></td>
+               <td><a ng-href="/#!/edit/{{friend._id}}">Edit</a></td>
+               <td><button ng-click="deleteFriend(friend._id)">Delete</button></td>
+           </tr>
+        </tbody>
+    </table>
+</div>

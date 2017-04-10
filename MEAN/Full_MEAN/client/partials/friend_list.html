@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Show</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat='friend in friends track by $index' >
+        <tr>
+            <td>{{friend.firstName}} {{friend.lastName}}</td>
+            <td>{{friend.birthday}}</td>
+            <td><button ng-click='show(friend._id)'>Show</button></td>
+            <td><button ng-click=''>Update</button></td>
+            <td><button ng-click=''>Delete</button></td>
+        </tr>
+    </tbody>
+</table>

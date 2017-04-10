@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Sup World!</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>  
+        <style>
+            #wrapper {
+                margin-top:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper" class="ui container">
+            <div class="ui three column grid">
+                <div class="column"></div>
+                <div class="column">
+                    <div class="ui inverted segment black">
+                        <h4>Random Passcode (passcode #@ViewBag.count)</h4>
+                        <h1>@ViewBag.greeting</h1>
+                        <div class="ui segment red">
+                            <p>@ViewBag.passcode</p>
+                        </div>
+                        <form action="new_passcode">
+                            <button class="ui inverted teal button"> Generate </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

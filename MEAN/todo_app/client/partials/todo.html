@@ -1,0 +1,47 @@
+<div class='container' ng-controller='tasksController'>
+    <div class='container'>
+        <nav class="navbar navbar-default navbar-static-top">
+          <div class="container-fluid">
+            <div class="navbar-brand navbar-brand-left">You have stuff to do, {{activeUser.name}}...</div>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href='#/add'>Add New Task</a></li>
+                <li><a href='/logout'>logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">To Do!</h3>
+                    <div class="pull-right">
+                        <i class="glyphicon glyphicon-ok"></i>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Tasks">
+                </div>
+                    <table class="table table-hover" id="dev-table">
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Description</th>
+                                <th>Target Date</th>
+                                <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="task in tasks">
+                                <td>{{task.task}}</td>
+                                <td>{{task.info}}</td>
+                                <td>{{task.date}}</td>
+                                <td><button>Completed</button></td>
+                                <td><button>Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

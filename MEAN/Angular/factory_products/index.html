@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+    <head>
+        <meta charset="utf-8">
+        <title>Factory Practice</title>
+        <script src='node_modules/angular/angular.js'></script>
+        <script type='text/javascript' src='controller.js'></script>
+        <script src='factory.js'></script>
+        <style>
+            #top {
+                border: 1px solid black;
+                margin: 10px;
+                padding:10px;
+            }
+            #bot {
+                border: 1px solid black;
+                padding:10px;
+                margin:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='top' ng-controller='productsController'>
+            <h2>The Products</h2>
+            <form>
+                <input type='text' ng-model='newProduct.name' placeholder='name'>
+                <input type='number' ng-model='newProduct.price' placeholder='price'>
+                <button ng-click='add_product()'>Add Product</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th><a href='#' ng-click="">Name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat='product in products'>
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price | currency }}</td>
+                        <td><button ng-click = 'delete_product(product)'>Delete Me</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id='bot' ng-controller="ordersController">
+            <table>
+                <thead>
+                    <tr>
+                        <th><a href='#' ng-click="">Name</th>
+                        <th>Price</th>
+                        <th>Qty Available</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat='product in products'>
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price | currency }}</td>
+                        <td> Some number</td>
+                        <td><button ng-click =''>Buy</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

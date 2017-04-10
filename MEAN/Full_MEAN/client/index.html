@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='friendApp'>
+    <head>
+        <meta charset="utf-8">
+        <title>Bacon Friends</title>
+        <script src="angular/angular.js" charset="utf-8"></script>
+        <script src="angular-route/angular-route.js"></script>
+        <script src="assets/app.js"></script>
+        <script src="js/config/routes.js"></script>
+        <script src="js/controllers/friendsController.js"></script>
+        <script src="js/factories/friendFactory.js"></script>
+    </head>
+    <body>
+        <div id='wrapper'>
+            <h1>Bacon Friends</h1>
+            <a href="#!/new">New Friends!</a> | <a href="#!/edit">Edit Friends</a> | <a href="#!/friends">Show Friends</a>
+            <div ng-view="">
+            </div>
+        </div>
+    </body>
+</html>

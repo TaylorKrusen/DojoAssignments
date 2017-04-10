@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="friendApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mean Friends</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="/angular/angular.js"></script>
+        <script src="/angular-route/angular-route.js"></script>
+        <script src="/assets/app.js"></script>
+        <script src="/assets/factories/friendFactory.js"></script>
+        <script src="/assets/controllers/indexController.js"></script>
+        <script src="/assets/controllers/editController.js"></script>
+        <script src="/assets/controllers/newController.js"></script>
+        <script src="/assets/controllers/showController.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="container">
+                <div>
+                    <a href="#!/">Index</a>
+                    <a href="#!/new">New</a>
+                    <!-- <a href="#/show">Show</a> -->
+                    <!-- <a href="#/edit">Edit</a> -->
+                </div>
+                <div ng-view>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

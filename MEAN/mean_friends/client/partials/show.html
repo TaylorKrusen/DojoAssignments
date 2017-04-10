@@ -1,0 +1,34 @@
+<div class="section">
+    <div class="row center-align">
+        <h1>Show Friend</h1>
+    </div>
+    <p ng-repeat="friend in friends"> {{friends.firstName}}</p>
+    <div class="row">
+        <div class="input-field col s6">
+            <input type="text" name="firstName" id="fname" ng-model="form.firstName">
+            <label for="fname">First Name</label>
+        </div>
+        <div class="input-field col s6">
+            <input type="text" name="lastName" id="lname" ng-model="form.lastName">
+            <label for="lname">Last Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input type="date" name="birthday" id="birthday" ng-model="form.birthday">
+            <label for="birthday">Birthday</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input type="text" name="createdAt" id="createdAt" ng-model="form.createdAt">
+            <label for="createdAt">Created At</label>
+        </div>
+    </div>
+    <div class="row center-align">
+        <div class="col s12">
+            <a href="/#/" class="btn grey darken-1">Index</a>
+            <a ng-href="/#!/edit/{{id}}" class="btn grey darken-1">Edit</a>
+        </div>
+    </div>
+</div>

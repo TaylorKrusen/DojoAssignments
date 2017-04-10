@@ -1,0 +1,11 @@
+<div ng-controller='sessionController'>
+    <h3>sup world</h3>
+    <div ng-messages="users.name.$error" ng-show="user.name.$touched">
+        <div class="card-panel red darken-2 white-text center-align" ng-message="required">
+            <span>we need yo name is required to log in.</span>
+        </div>
+    </div>
+    <input type='text' placeholder='enter name here' ng-model='user.name'>
+    <input type='password' placeholder='enter password' ng-model = 'user.password'>
+    <input type='submit' value='press this button' ng-click='login()'>
+</div>

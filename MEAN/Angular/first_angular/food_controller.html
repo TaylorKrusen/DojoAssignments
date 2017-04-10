@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+    <head>
+        <meta charset="utf-8">
+        <title>Controller and Directive practice</title>
+        <script src='node_modules/angular/angular.js'></script>
+        <style>
+        .left_box {
+            display: inline-block;
+            width: 50%;
+            border: 1px solid black;
+            vertical-align: top;
+            max-height: 400px;
+            padding: 10px;
+        }
+        .right_box {
+            display: inline-block;
+            width: 40%;
+            border: 1px solid black;
+            vertical-align: top;
+            max-height: 400px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+        </style>
+        <script>
+            console.log('your js is loaded, sir');
+            var myApp = angular.module('myApp',[]);
+            myApp.controller('foodController', ['$scope', function($scope){
+                $scope.foods = [];
+                $scope.add_food = function(){
+                    $scope.foods.push($scope.food_model);
+                    $scope.food_model="";
+                    console.log('you made a food:', $scope.foods);
+                }
+            }])
+        </script>
+    </head>
+    <body>
+        <div ng-controller='foodController'>
+            <div class='left_box'>
+                <h3> Add a Food</h3>
+                <form ng-submit='add_food()'>
+                    Favorite Food: <input type='text' ng-model='food_model'>
+                    <input type='submit' value='Add Food'>
+                </form>
+                <p>Currently typing: <span ng-if='food_model'><strong>{{food_model}}</strong></span></p>
+            </div>
+            <div class='right_box'>
+                <h3>The Foods...</h3>
+                <input type='text' placeholder='filter...' ng-model='food_filter'>
+                <p ng-repeat='food in foods | filter:food_filter track by $index'>{{food}}</p>
+            </div>
+        </div>
+    </body>
+</html>

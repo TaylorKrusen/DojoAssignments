@@ -1,0 +1,7 @@
+<div ng-controller='sessionController'>
+    <p ng-repeat="error in errors">{{error}}</p>
+    <form ng-submit="login()">
+        <input ng-model='logReg.name' type='text' placeholder='enter yo name!'>
+        <input type='submit' value='login or register'>
+    </form>
+</div>

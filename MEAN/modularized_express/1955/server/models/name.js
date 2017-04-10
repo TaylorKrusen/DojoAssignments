@@ -3,8 +3,10 @@
 var mongoose = require('mongoose');
 // create a new schema for our object
 var NameSchema = new mongoose.Schema({
-    name: String,
+    firstName: {type: String,required:true, minlength:3},
+    lastName: {type: String,required:true, minlength:3},
+    birthday:{type: Date, required: true},
 });
 
 // use our schema to create our new model.
-mongoose.model('Name', NameSchema);
+mongoose.model('Friend', FriendSchema);

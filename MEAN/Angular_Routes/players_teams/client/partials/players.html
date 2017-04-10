@@ -1,0 +1,21 @@
+<h1> duh players</h1>
+<div id='playerForm'>
+    <form ng-submit='add_player()'>
+        <input type="text" placeholder="Name" ng-model='newPlayer.name' >
+        <input type="submit" value="Add User!">
+    </form>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Player</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat='player in players track by $index'>
+        <tr>
+            <td>{{ player.name }}</td>
+            <td><button ng-click ='delete_player($index)'>Delete</button></td>
+        </tr>
+    </tbody>
+</table>
