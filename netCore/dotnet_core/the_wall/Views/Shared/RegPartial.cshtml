@@ -1,0 +1,63 @@
+@model the_wall.Models.RegViewModel
+	@if (ViewBag.DupeReg != null)
+	{
+		<div class="ui negative small message">
+            <p>@ViewBag.DupeReg</p>
+        </div>
+	}
+    <form class="ui form segment green" id="regForm" asp-controller="User" asp-action="Register" method="post">
+        <h1>Registration</h1>
+        <div class="field">
+            @if (ViewBag.RegErrors != null)
+            {
+                <div class="ui negative small message">
+                    <span asp-validation-for="FirstName"></span>
+                </div>
+            }
+            <label asp-for="FirstName" id="first">First Name:</label>
+            <input asp-for="FirstName" type="text" placeholder="First Name">
+        </div>
+        <div class="field">
+            @if (ViewBag.RegErrors != null)
+            {
+                <div class="ui negative small message">
+                    <span asp-validation-for="LastName"></span>
+                </div>
+            }
+            <label asp-for="LastName">Last Name:</label>
+            <input asp-for="LastName" type="text" placeholder="Last Name">
+        </div>
+         <div class="field">
+            @if (ViewBag.RegErrors != null)
+            {
+                <div class="ui negative small message">
+                    <span asp-validation-for="Email"></span>
+                </div>
+            }
+            <label asp-for="Email">Email:</label>
+            <input asp-for="Email" type="email" placeholder="your@email.com">
+        </div>
+         <div class="field">
+            @if (ViewBag.RegErrors != null)
+            {
+                <div class="ui negative small message">
+                    <span asp-validation-for="Password"></span>
+                </div>
+            }
+            <label asp-for="Password">Password:</label>
+            <input asp-for="Password" id="password" onkeyup="checkPword()" onkeydown="checkPword()" type="password" placeholder="Please create a password">
+        </div>
+         <div class="field">
+            <label asp-for="Confirm">Confirm Password:</label>
+            @if (ViewBag.RegErrors != null)
+            {
+                <div class="ui negative small message">
+                    <span asp-validation-for="Confirm"></span>
+                </div>
+            }
+            <input asp-for="Confirm" id="confirm" type="password" onkeyup="checkConf()" onkeydown="checkConf()" placeholder="Confirm your Password">
+        </div>
+        <div>
+            <button class="ui green button" type="submit">Register</button>
+        </div>
+    </form>

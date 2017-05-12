@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="ui grid">
+    <div class="ui twelve wide column centered">
+        <nav class="ui pointing menu">
+            <p class="item">
+                What's up, @ViewBag.User.FirstName?
+            </p>
+            <a class="active item">
+                Dashboard
+            </a>
+            
+            <a class="item" href="users/edit/@ViewBag.User.UserId">
+                Profile
+            </a>
+            <div class="right menu">
+                <div class="item">
+                    <a href="/logout">Log off</a>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <h1>Manage Users</h1>
+            <a href="/users/new"><button class="blue ui button">
+                Add New User
+            </button></a>
+        </div>
+        <table class="ui celled table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Created At</th>
+                    <th>User Level</th>
+                    @if (@ViewBag.User.Admin == 1){
+                        <th>Actions</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @{ foreach(var User in @ViewBag.Users){
+                    <tr>
+                        <td>@User.UserId</td>
+                        <td><a href="/users/show/@User.UserId">@User.FirstName @User.LastName</a></td>
+                        <td>@User.Email</td>
+                        <td>@User.CreatedAt</td>
+                        @if (@User.Admin == 0){
+                            <td>Normal</td>
+                        } else {
+                            <td>Admin</td>
+                        }
+                        @if (@ViewBag.User.Admin == 1){
+                            <td>
+                                <a href="users/edit/@User.UserId">Edit</a> | <a href="delete/@User.UserId">Remove</a>
+                            </td>
+                        }
+                    </tr>
+                }}
+            </tbody>
+        </table>
+    </div>
+</div>

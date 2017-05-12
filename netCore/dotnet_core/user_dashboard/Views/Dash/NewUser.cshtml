@@ -1,0 +1,62 @@
+@{ ViewData["Title"] = "Add a New User"; }
+
+@model user_dash.Models.RegViewModel
+	
+<div class="ui grid">
+    <div class="ui twelve wide column centered">
+        <nav class="ui pointing menu">
+            <p class="item">
+                Adding a User?
+            </p>
+            <a class="item" href="/dashboard">
+                Dashboard
+            </a>
+            <a class="item">
+                Profile
+            </a>
+            <div class="right menu">
+                <div class="item">
+                    <a href="/logout">Log off</a>
+                </div>
+            </div>
+        </nav>
+        @if (ViewBag.DupeReg != null)
+        {
+            <div class="ui negative small message">
+                <p>@ViewBag.DupeReg</p>
+            </div>
+        }
+        @if (ViewBag.RegErrors != null)
+        {
+            <div class="ui negative message" asp-validation-summary="All">
+                <i class="close icon"></i>
+            </div>
+        }
+        <form class="ui form segment green" id="regForm" asp-controller="Dash" asp-action="NewUserReg" method="post">
+            <h1>Add a New User</h1>
+            <div class="field">
+                <label asp-for="FirstName" id="first">First Name:</label>
+                <input asp-for="FirstName" type="text" placeholder="First Name">
+            </div>
+            <div class="field">
+                <label asp-for="LastName">Last Name:</label>
+                <input asp-for="LastName" type="text" placeholder="Last Name">
+            </div>
+            <div class="field">
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email" type="email" placeholder="your@email.com">
+            </div>
+            <div class="field">
+                <label asp-for="Password">Password:</label>
+                <input asp-for="Password" id="password" type="password" placeholder="Please create a password">
+            </div>
+            <div class="field">
+                <label asp-for="Confirm">Confirm Password:</label>
+                <input asp-for="Confirm" id="confirm" type="password" placeholder="Confirm your Password">
+            </div>
+            <div>
+                <button class="ui green button" type="submit">Register</button>
+            </div>
+        </form>
+    </div> 
+</div>

@@ -1,0 +1,79 @@
+@{ ViewData["Title"] = "Edit User Profile"; }
+
+@model user_dash.Models.RegViewModel
+	
+<div class="ui grid">
+    <div class="ui twelve wide column centered">
+        <nav class="ui pointing menu">
+            <p class="item">
+                Edit a User
+            </p>
+            <a class="item" href="/dashboard">
+                Dashboard
+            </a>
+            <a class="active item">
+                Profile
+            </a>
+            <div class="right menu">
+                <div class="item">
+                    <a href="/logout">Log off</a>
+                </div>
+            </div>
+        </nav>
+        @if (ViewBag.EditInfo != null)
+        {
+            <div class="ui info small message">
+                <p>@ViewBag.EditInfo</p>
+            </div>
+        }
+        <div class="ui two column grid">
+            <div class="column">
+                <div class="ui form segment green">
+                    <form action="/editinfo/@ViewBag.ThisUser.UserId" method="post" id="">
+                        <div class="field">
+                            <label for="Email">Email:</label>
+                            <p><span style="color:red">Set as:</span> @ViewBag.ThisUser.Email</p>
+                            <input name="Email" type="email" placeholder="updated@emailaddress.com" required>
+                        </div>
+                        <div class="field">
+                            <label for="FirstName">First Name:</label>
+                            <p><span style="color:red">Set as:</span> @ViewBag.ThisUser.FirstName</p>
+                            <input name="FirstName" type="text" placeholder="First Name" required>
+                        </div>
+                        <div class="field">
+                            <label for="LastName">Last Name:</label>
+                            <p><span style="color:red">Set as:</span> @ViewBag.ThisUser.LastName</p>
+                            <input name="LastName" type="text" placeholder="Last Name" required>
+                        </div>
+                        <input type="submit" class="ui button green" value="Save">
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui segment form green">
+                    <form action="/editpass/@ViewBag.ThisUser.UserId" method="post" id="">
+                        <div class="field">
+                            <label for="Password">Password: </label>
+                            <input name="Password" type="password" placeholder="Enter New Password" required>
+                        </div>
+                        <div class="field">
+                            <label for="Confirm">Confirm Password</label>
+                            <input name="Confirm" type="password" placeholder="Confirm New Password" required>
+                        </div>
+                        <input type="submit" class="ui button green" value="Update Password">
+                    </form>
+                </div> 
+            </div>
+        </div> 
+        <div class="ui segment form green">
+            <form action="/editdescription/@ViewBag.ThisUser.UserId" method="post" id="">
+                <div class="field">
+                    <label for="Description">Update Your Description:</label>
+                    <p><span style="color:red">Currently:</span> @ViewBag.ThisUser.Description</p>
+                    <input name="Description" type="text" placeholder="Update Your Description!">
+                </div>
+                <input type="submit" class="ui button green" value="Save Description">
+            </form>
+        </div> 
+    </div> 
+</div>

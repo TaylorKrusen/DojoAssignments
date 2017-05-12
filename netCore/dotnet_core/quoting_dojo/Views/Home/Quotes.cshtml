@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Form Swag";
+}
+ <div class="ui grid segment centered">
+    <div class="twelve wide column">
+        <div id='quote_list'>
+            <table class="ui small orange celled table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quote</th>
+                        <th>Date Posted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach(var quote in ViewBag.quotes)
+                        {
+                            <tr>
+                                <td>
+                                    <h6>@quote["the_name"]</h6>
+                                </td>
+                                <td><p>@quote["the_quote"]</p></td>
+                                <td><p>@quote["CreatedAt"]</p>></td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

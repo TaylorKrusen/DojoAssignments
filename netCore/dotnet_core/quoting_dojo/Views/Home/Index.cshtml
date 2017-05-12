@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Form Swag";
+}
+<style>
+    #main {
+        margin-top:30px;
+    }
+    #the_form {
+        margin-top:15px;
+    }
+</style>
+<div id="main" class="ui four column centered grid">
+    <div class="column ui segment teal">
+        <h1 class="header">Welcome to QuoteDojo.</h1>
+        <div>
+            @{
+                foreach(var error in ViewBag.errors)
+                {
+                    //If there are any errors for a field...
+                    if(@error.Errors.Count > 0)
+                    {
+                        <div class="ui negative message">
+                            <i class="close icon"></i>
+                            <p>@error.Errors[0].ErrorMessage</p>
+                        </div>  
+                    }
+                }
+            }
+        </div>
+        <form class="ui form" id="the_form" action="add_quote" method="post">
+            <div class="field">
+                <input type="text" name="the_name" placeholder="First Name">
+            </div>
+            <div class="field">
+                <textarea name="the_quote" placeholder="Share your wisdom..."></textarea>
+            </div>
+            <button class="ui grey button" type="submit">Add my Quote</button>
+            <button class="ui grey button">Skip to quotes.</button>
+        </form>
+    </div>
+</div>

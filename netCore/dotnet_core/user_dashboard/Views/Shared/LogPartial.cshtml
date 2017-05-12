@@ -1,0 +1,28 @@
+@model user_dash.Models.LogViewModel
+    @if (ViewBag.LogErrors != null)
+	{
+		<div class="ui negative message" asp-validation-summary="All">
+            <i class="close icon"></i>
+        </div>
+	}
+    @if (ViewBag.DupeLog != null)
+	{
+        <div class="ui negative message">
+            <i class="close icon"></i>
+            <p>@ViewBag.DupeLog</p>
+        </div>  
+	}
+    <form class="ui form segment green" id="loginForm" asp-controller="User" asp-action="Login" method="post">
+        <h1>Log In</h1>
+        <div class="field">
+            <label asp-for="LogEmail">Email</label>
+            <input asp-for="LogEmail" type="email" placeholder="Email">
+        </div>
+        <div class="field">
+            <label asp-for="LogPass">Password</label>
+            <input asp-for="LogPass" type="password" placeholder="Password">
+        </div>
+        <div>
+            <button class="ui green button" type="submit">Log In</button>
+        </div>
+    </form>

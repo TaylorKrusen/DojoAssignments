@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Sup World!</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <style>
+            #wrapper {
+                margin-top:20px;
+            }
+            h5 {
+                display:inline-block;
+                margin-left:15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper" class="ui container">
+            <div id="himom">
+            </div>
+            <div class="ui two column centered grid">
+                <div class="ui column segment">
+                    <div class="ui four item menu">
+                        <h5 id="fullness">Fullness: 20</h5>
+                        <h5 id="energy">Energy: 50</h5>
+                        <h5 id="happiness">Happiness: 20</h5>
+                        <h5 id="meals">Meals: 3</h5>
+                    </div>
+                    <div class="ui segment teal">
+                        <img class="ui centered medium image" src="/images/hedgehog2.jpg">
+                        <div class="ui three column grid">
+                            <div class="column"></div>
+                            <p class="center aligned column" id="the_message">Send Bacon.</p>
+                            <div class="column"></div>
+                        </div>
+                    </div>
+                    <div class="ui center aligned four column grid">
+                        <div class="column">
+                            <button id="feed_btn" class="ui button teal">Feed</button>
+                        </div>
+                        <div class="column">
+                            <button id="play_btn" class="ui button teal">Play</button>
+                        </div>
+                        <div class="column">
+                            <button id="work_btn" class="ui button teal">Work</button>
+                        </div>
+                        <div class="column">
+                            <button id="sleep_btn" class="ui button teal">Sleep</button>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $('#feed_btn').click(function(){
+                    $.get("feed", function(response) {
+                        $("#fullness").html("Fullness: " + response.fullness + "&nbsp;&nbsp;");
+                        $("#meals").html("Meals: " + response.meals + "&nbsp;&nbsp;");
+                        $("#the_message").html(response.message + "&nbsp;&nbsp;");
+
+                    })
+                })
+                $('#play_btn').click(function(){
+                    $.get("play", function(response) {
+                        $("#energy").html("Energy: " + response.energy + "&nbsp;&nbsp;");
+                        $("#happiness").html("Happiness: " + response.happiness + "&nbsp;&nbsp;");
+                        $("#the_message").html(response.message + "&nbsp;&nbsp;");
+                    })
+                })
+                $('#work_btn').click(function(){
+                    $.get("work", function(response) {
+                        $("#meals").html("Meals: " + response.meals + "&nbsp;&nbsp;");
+                        $("#energy").html("Energy: " + response.energy + "&nbsp;&nbsp;");
+                        $("#the_message").html(response.message + "&nbsp;&nbsp;");
+                    })
+                })
+                $('#sleep_btn').click(function(){
+                    $.get("sleep", function(response) {
+                        $("#energy").html("Energy: " + response.energy + "&nbsp;&nbsp;");
+                        $("#fullness").html("Fullness: " + response.fullness + "&nbsp;&nbsp;");
+                        $("#happiness").html("Happiness: " + response.happiness + "&nbsp;&nbsp;");
+                        $("#the_message").html(response.message + "&nbsp;&nbsp;");
+                    })
+                })
+            })
+        </script> 
+    </body>
+</html>

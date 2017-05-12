@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "RESTauranter Home";
+}
+@model RestSpace.Models.Review
+
+<h1>Write a new Review:</h1>
+<a href="the_reviews">go to reviews</a>
+<div id="registration_grid" class="ui equal wide grid">
+    <div class="six wide column">
+        <div>
+            @{
+                foreach(var error in ViewBag.errors)
+                {
+                    //If there are any errors for a field...
+                    if(@error.Errors.Count > 0)
+                    {
+                        <div class="ui negative message">
+                            <i class="close icon"></i>
+                            <p>@error.Errors[0].ErrorMessage</p>
+                        </div>  
+                    }
+                }
+            }
+        </div>
+        <div class="ui segment">
+            <form class="ui form" asp-controller="Review" asp-action="AddReview" method="post">
+                <div class="field">
+                    <label asp-for="ReviewName">Your Name:</label>
+                    <input type="text" asp-for="ReviewName" placeholder="Your Name">
+                </div>
+                <div class="field">
+                    <label asp-for="RestaurantName">Name of Restaurant:</label>
+                    <input type="text" asp-for="RestaurantName" placeholder="Name of Restaurant">
+                </div>
+                <div class="field">
+                    <label asp-for="Rating">Stars:</label>
+                    <select asp-for="Rating">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label asp-for="ReviewText">Review:</label>
+                    <textarea asp-for="ReviewText"></textarea>
+                </div>
+                <div class="field">
+                    <label asp-for="VisitDate">Date of Visit:</label>
+                    <input type="date" asp-for="VisitDate">
+                </div>
+                <div>
+                    <button class="ui primary button" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+@using RestSpace.Models
+@{
+    ViewData["Title"] = "RESTaurants - Reviews";
+}
+@if (ViewBag.reviewShow)
+{
+    <h1>Peep these reviews!</h1>
+    <a href="/#">go home</a>
+    <div id="reviewContainer">
+        @foreach (var review in ViewBag.reviews)
+        {
+            <div class="ui segment">
+                <p><em>@review.ReviewText</em></p>
+                <p>They gave this place @review.Rating stars!</p>
+                <p>@review.ReviewName at @review.CreatedAt.ToString("h:mm tt MMM dd, yyyy")</p>
+                <h4>Restaurant: @review.RestaurantName</h4>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h1>No reviews exist!</h1>
+}

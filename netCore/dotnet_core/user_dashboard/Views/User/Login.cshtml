@@ -1,0 +1,39 @@
+@using user_dash.Models
+
+@{
+    ViewData["Title"] = "Login Splash";
+}
+<div class="ui segment grid">
+    <div class="ui four wide column">
+    </div>
+    <div class="ui four wide column">
+        @Html.Partial("RegPartial", (RegViewModel)@ViewBag.RegView)
+    </div>
+    <div class="ui four wide column">
+        @Html.Partial("LogPartial", (LogViewModel)@ViewBag.LogView)
+    </div>
+    <div class="ui four wide column">
+    </div>
+</div>
+
+<script type="text/javascript">
+	var first = document.getElementById('first'),
+	pword = document.getElementById('password'),
+	conf = document.getElementById('confirm'),
+	pwordReg = /(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@@#$%^&*()_+}{:;'?/><.;,])(?!.*\s).*$/;
+	function checkPword() { //allows the password error box to be dynamically rendered and adds a red or green border to the password input based on the password entered matching the given regex
+		if (pword.value.match(pwordReg)) {
+			pword.style.border = "3px solid green";
+		} else {
+			pword.style.border = "3px solid red";
+		}
+	}
+	function checkConf() { //outlines the confirm password input based on it matching the password input
+		if (conf.value == pword.value && conf.value.match(pwordReg)) {
+			conf.style.border = "3px solid green";
+		} else {
+			conf.style.border = "3px solid red";
+		}
+	}
+	first.focus(); //on page load, puts the cursor in the register first name input field
+</script>
